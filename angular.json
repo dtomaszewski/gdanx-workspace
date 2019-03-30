@@ -2,7 +2,612 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "rent-desktop": {
+      "root": "apps/rent/desktop/",
+      "sourceRoot": "apps/rent/desktop/src",
+      "projectType": "application",
+      "prefix": "gdanx",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/rent/desktop",
+            "index": "apps/rent/desktop/src/index.html",
+            "main": "apps/rent/desktop/src/main.ts",
+            "polyfills": "apps/rent/desktop/src/polyfills.ts",
+            "tsConfig": "apps/rent/desktop/tsconfig.app.json",
+            "assets": [
+              "apps/rent/desktop/src/favicon.ico",
+              "apps/rent/desktop/src/assets"
+            ],
+            "styles": ["apps/rent/desktop/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/rent/desktop/src/environments/environment.ts",
+                  "with": "apps/rent/desktop/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "rent-desktop:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "rent-desktop:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "rent-desktop:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/rent/desktop/tsconfig.app.json",
+              "apps/rent/desktop/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/rent/desktop/jest.config.js",
+            "tsConfig": "apps/rent/desktop/tsconfig.spec.json",
+            "setupFile": "apps/rent/desktop/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "rent-desktop-e2e": {
+      "root": "apps/rent/desktop-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/rent/desktop-e2e/cypress.json",
+            "tsConfig": "apps/rent/desktop-e2e/tsconfig.e2e.json",
+            "devServerTarget": "rent-desktop:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "rent-desktop:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/rent/desktop-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "rent-mobile": {
+      "root": "apps/rent/mobile/",
+      "sourceRoot": "apps/rent/mobile/src",
+      "projectType": "application",
+      "prefix": "gdanx",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/rent/mobile",
+            "index": "apps/rent/mobile/src/index.html",
+            "main": "apps/rent/mobile/src/main.ts",
+            "polyfills": "apps/rent/mobile/src/polyfills.ts",
+            "tsConfig": "apps/rent/mobile/tsconfig.app.json",
+            "assets": [
+              "apps/rent/mobile/src/favicon.ico",
+              "apps/rent/mobile/src/assets"
+            ],
+            "styles": ["apps/rent/mobile/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/rent/mobile/src/environments/environment.ts",
+                  "with": "apps/rent/mobile/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "rent-mobile:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "rent-mobile:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "rent-mobile:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/rent/mobile/tsconfig.app.json",
+              "apps/rent/mobile/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/rent/mobile/jest.config.js",
+            "tsConfig": "apps/rent/mobile/tsconfig.spec.json",
+            "setupFile": "apps/rent/mobile/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "rent-mobile-e2e": {
+      "root": "apps/rent/mobile-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/rent/mobile-e2e/cypress.json",
+            "tsConfig": "apps/rent/mobile-e2e/tsconfig.e2e.json",
+            "devServerTarget": "rent-mobile:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "rent-mobile:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/rent/mobile-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "payments-desktop": {
+      "root": "apps/payments/desktop/",
+      "sourceRoot": "apps/payments/desktop/src",
+      "projectType": "application",
+      "prefix": "gdanx",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/payments/desktop",
+            "index": "apps/payments/desktop/src/index.html",
+            "main": "apps/payments/desktop/src/main.ts",
+            "polyfills": "apps/payments/desktop/src/polyfills.ts",
+            "tsConfig": "apps/payments/desktop/tsconfig.app.json",
+            "assets": [
+              "apps/payments/desktop/src/favicon.ico",
+              "apps/payments/desktop/src/assets"
+            ],
+            "styles": ["apps/payments/desktop/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/payments/desktop/src/environments/environment.ts",
+                  "with": "apps/payments/desktop/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "payments-desktop:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "payments-desktop:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "payments-desktop:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/payments/desktop/tsconfig.app.json",
+              "apps/payments/desktop/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/payments/desktop/src/test.ts",
+            "tsConfig": "apps/payments/desktop/tsconfig.spec.json",
+            "karmaConfig": "apps/payments/desktop/karma.conf.js",
+            "polyfills": "apps/payments/desktop/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "payments-desktop-e2e": {
+      "root": "apps/payments/desktop-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/payments/desktop-e2e/cypress.json",
+            "tsConfig": "apps/payments/desktop-e2e/tsconfig.e2e.json",
+            "devServerTarget": "payments-desktop:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "payments-desktop:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/payments/desktop-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "payments-mobile": {
+      "root": "apps/payments/mobile/",
+      "sourceRoot": "apps/payments/mobile/src",
+      "projectType": "application",
+      "prefix": "gdanx",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/payments/mobile",
+            "index": "apps/payments/mobile/src/index.html",
+            "main": "apps/payments/mobile/src/main.ts",
+            "polyfills": "apps/payments/mobile/src/polyfills.ts",
+            "tsConfig": "apps/payments/mobile/tsconfig.app.json",
+            "assets": [
+              "apps/payments/mobile/src/favicon.ico",
+              "apps/payments/mobile/src/assets"
+            ],
+            "styles": ["apps/payments/mobile/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/payments/mobile/src/environments/environment.ts",
+                  "with": "apps/payments/mobile/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "payments-mobile:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "payments-mobile:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "payments-mobile:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/payments/mobile/tsconfig.app.json",
+              "apps/payments/mobile/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/payments/mobile/src/test.ts",
+            "tsConfig": "apps/payments/mobile/tsconfig.spec.json",
+            "karmaConfig": "apps/payments/mobile/karma.conf.js",
+            "polyfills": "apps/payments/mobile/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "payments-mobile-e2e": {
+      "root": "apps/payments/mobile-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/payments/mobile-e2e/cypress.json",
+            "tsConfig": "apps/payments/mobile-e2e/tsconfig.e2e.json",
+            "devServerTarget": "payments-mobile:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "payments-mobile:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/payments/mobile-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "rent-feature-shell": {
+      "root": "libs/rent/feature-shell",
+      "sourceRoot": "libs/rent/feature-shell/src",
+      "projectType": "library",
+      "prefix": "gdanx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/rent/feature-shell/tsconfig.lib.json",
+              "libs/rent/feature-shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/rent/feature-shell/jest.config.js",
+            "tsConfig": "libs/rent/feature-shell/tsconfig.spec.json",
+            "setupFile": "libs/rent/feature-shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "rent-data-access": {
+      "root": "libs/rent/data-access",
+      "sourceRoot": "libs/rent/data-access/src",
+      "projectType": "library",
+      "prefix": "gdanx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/rent/data-access/tsconfig.lib.json",
+              "libs/rent/data-access/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/rent/data-access/jest.config.js",
+            "tsConfig": "libs/rent/data-access/tsconfig.spec.json",
+            "setupFile": "libs/rent/data-access/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "payments-feature-shell": {
+      "root": "libs/payments/feature-shell",
+      "sourceRoot": "libs/payments/feature-shell/src",
+      "projectType": "library",
+      "prefix": "gdanx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/payments/feature-shell/tsconfig.lib.json",
+              "libs/payments/feature-shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/payments/feature-shell/src/test.ts",
+            "tsConfig": "libs/payments/feature-shell/tsconfig.spec.json",
+            "karmaConfig": "libs/payments/feature-shell/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "payments-data-access": {
+      "root": "libs/payments/data-access",
+      "sourceRoot": "libs/payments/data-access/src",
+      "projectType": "library",
+      "prefix": "gdanx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/payments/data-access/tsconfig.lib.json",
+              "libs/payments/data-access/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/payments/data-access/src/test.ts",
+            "tsConfig": "libs/payments/data-access/tsconfig.spec.json",
+            "karmaConfig": "libs/payments/data-access/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -17,5 +622,6 @@
     "@nrwl/schematics:library": {
       "style": "scss"
     }
-  }
+  },
+  "defaultProject": "rent-desktop"
 }

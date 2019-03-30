@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@gdanx/rent/feature-shell": ["libs/rent/feature-shell/src/index.ts"],
+      "@gdanx/rent/data-access": ["libs/rent/data-access/src/index.ts"],
+      "@gdanx/payments/feature-shell": [
+        "libs/payments/feature-shell/src/index.ts"
+      ],
+      "@gdanx/payments/data-access": ["libs/payments/data-access/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

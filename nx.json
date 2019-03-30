@@ -7,5 +7,42 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "rent-desktop": {
+      "tags": []
+    },
+    "rent-desktop-e2e": {
+      "tags": []
+    },
+    "rent-mobile": {
+      "tags": []
+    },
+    "rent-mobile-e2e": {
+      "tags": []
+    },
+    "payments-desktop": {
+      "tags": []
+    },
+    "payments-desktop-e2e": {
+      "tags": []
+    },
+    "payments-mobile": {
+      "tags": []
+    },
+    "payments-mobile-e2e": {
+      "tags": []
+    },
+    "rent-feature-shell": {
+      "tags": []
+    },
+    "rent-data-access": {
+      "tags": []
+    },
+    "payments-feature-shell": {
+      "tags": []
+    },
+    "payments-data-access": {
+      "tags": []
+    }
+  }
 }
