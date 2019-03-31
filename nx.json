@@ -43,6 +43,9 @@
     },
     "payments-data-access": {
       "tags": []
+    },
+    "shared-ui-buttons": {
+      "tags": []
     }
   }
 }

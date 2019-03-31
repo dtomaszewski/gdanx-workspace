@@ -20,7 +20,8 @@
       "@gdanx/payments/feature-shell": [
         "libs/payments/feature-shell/src/index.ts"
       ],
-      "@gdanx/payments/data-access": ["libs/payments/data-access/src/index.ts"]
+      "@gdanx/payments/data-access": ["libs/payments/data-access/src/index.ts"],
+      "@gdanx/shared/ui/buttons": ["libs/shared/ui/buttons/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -606,6 +606,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "shared-ui-buttons": {
+      "root": "libs/shared/ui/buttons",
+      "sourceRoot": "libs/shared/ui/buttons/src",
+      "projectType": "library",
+      "prefix": "gdanx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui/buttons/tsconfig.lib.json",
+              "libs/shared/ui/buttons/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui/buttons/jest.config.js",
+            "tsConfig": "libs/shared/ui/buttons/tsconfig.spec.json",
+            "setupFile": "libs/shared/ui/buttons/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
