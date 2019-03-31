@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RentMainComponent } from './rent-main/rent-main.component';
-import { RentDataAccessModule } from '@gdanx/rent/data-access';
 import { SharedUiButtonsModule } from '@gdanx/shared/ui/buttons';
+import { RentFeatureMapModule } from '@gdanx/rent/feature-map';
 
 @NgModule({
-  imports: [CommonModule, RentDataAccessModule, SharedUiButtonsModule],
+  imports: [CommonModule, SharedUiButtonsModule, RentFeatureMapModule],
   declarations: [RentMainComponent],
   exports: [RentMainComponent],
   providers: []

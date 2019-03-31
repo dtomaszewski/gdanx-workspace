@@ -4,6 +4,7 @@ import { ButtonDefaultComponent } from './button-default/button-default.componen
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [ButtonDefaultComponent]
+  declarations: [ButtonDefaultComponent],
+  exports: [ButtonDefaultComponent]
 })
 export class SharedUiButtonsModule {}

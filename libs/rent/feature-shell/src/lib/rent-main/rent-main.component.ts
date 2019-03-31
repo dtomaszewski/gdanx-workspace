@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RentApiService } from '../../../../data-access/src/lib/rent-api.service';
 
 @Component({
   selector: 'gdanx-rent-main',
@@ -7,9 +6,7 @@ import { RentApiService } from '../../../../data-access/src/lib/rent-api.service
   styleUrls: ['./rent-main.component.scss']
 })
 export class RentMainComponent implements OnInit {
-  constructor(private rentApi: RentApiService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.rentApi.getData();
-  }
+  ngOnInit() {}
 }

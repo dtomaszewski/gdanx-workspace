@@ -637,6 +637,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "rent-feature-map": {
+      "root": "libs/rent/feature-map",
+      "sourceRoot": "libs/rent/feature-map/src",
+      "projectType": "library",
+      "prefix": "gdanx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/rent/feature-map/tsconfig.lib.json",
+              "libs/rent/feature-map/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/rent/feature-map/jest.config.js",
+            "tsConfig": "libs/rent/feature-map/tsconfig.spec.json",
+            "setupFile": "libs/rent/feature-map/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
