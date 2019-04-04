@@ -9,46 +9,46 @@
   },
   "projects": {
     "rent-desktop": {
-      "tags": []
+      "tags": ["scope:rent"]
     },
     "rent-desktop-e2e": {
-      "tags": []
+      "tags": ["scope:rent"]
     },
     "rent-mobile": {
-      "tags": []
+      "tags": ["scope:rent"]
     },
     "rent-mobile-e2e": {
-      "tags": []
+      "tags": ["scope:rent"]
     },
     "payments-desktop": {
-      "tags": []
+      "tags": ["scope:payments"]
     },
     "payments-desktop-e2e": {
-      "tags": []
+      "tags": ["scope:payments"]
     },
     "payments-mobile": {
-      "tags": []
+      "tags": ["scope:payments"]
     },
     "payments-mobile-e2e": {
-      "tags": []
+      "tags": ["scope:payments"]
     },
     "rent-feature-shell": {
-      "tags": []
+      "tags": ["scope:rent", "type:feature"]
     },
     "rent-data-access": {
-      "tags": []
+      "tags": ["scope:rent", "type:data-access"]
     },
     "payments-feature-shell": {
-      "tags": []
+      "tags": ["scope:payments", "type:feature"]
     },
     "payments-data-access": {
-      "tags": []
+      "tags": ["scope:payments", "type:data-access"]
     },
     "shared-ui-buttons": {
-      "tags": []
+      "tags": ["scope:shared", "type:presentational"]
     },
     "rent-feature-map": {
-      "tags": []
+      "tags": ["scope:rent", "type:feature"]
     }
   }
 }

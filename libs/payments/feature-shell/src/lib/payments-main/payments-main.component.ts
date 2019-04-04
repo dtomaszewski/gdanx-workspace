@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PaymentsApiService } from '../../../../data-access/src/lib/payments-api.service';
+import { PaymentsApiService } from '@gdanx/payments/data-access';
 
 @Component({
   selector: 'gdanx-payments-main',

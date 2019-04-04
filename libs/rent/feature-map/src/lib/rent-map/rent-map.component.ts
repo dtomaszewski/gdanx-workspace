@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RentApiService } from '../../../../data-access/src/lib/rent-api.service';
+import { RentApiService } from '@gdanx/rent/data-access';
 
 @Component({
   selector: 'gdanx-rent-map',

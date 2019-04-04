@@ -57,8 +57,20 @@
         "allow": [],
         "depConstraints": [
           {
-            "sourceTag": "*",
-            "onlyDependOnLibsWithTags": ["*"]
+            "sourceTag": "scope:payments",
+            "onlyDependOnLibsWithTags": ["scope:payments", "scope:shared"]
+          },
+          {
+            "sourceTag": "scope:rent",
+            "onlyDependOnLibsWithTags": ["scope:rent", "scope:shared"]
+          },
+          {
+            "sourceTag": "scope:shared",
+            "onlyDependOnLibsWithTags": ["scope:shared"]
+          },
+          {
+            "sourceTag": "type:presentational",
+            "onlyDependOnLibsWithTags": ["type:presentational"]
           }
         ]
       }
