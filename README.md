@@ -1,3 +1,9 @@
+This project is an example project used for present Nx capabilities.
+
+It's connected with my ngTricity presentation at 08.04.2019
+
+Slides for presentation : https://slides.com/dariusztomaszewski/nx-monorepo
+
 # GdanxWorkspace
 
 This project was generated using [Nx](https://nx.dev).
