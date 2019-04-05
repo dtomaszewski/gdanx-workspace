@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PaymentsMainComponent } from './payments-main.component';
+import { SharedUiButtonsModule } from '@gdanx/shared/ui/buttons';
+import { PaymentsDataAccessModule } from '@gdanx/payments/data-access';
 
 describe('PaymentsMainComponent', () => {
   let component: PaymentsMainComponent;
@@ -8,7 +10,8 @@ describe('PaymentsMainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PaymentsMainComponent]
+      declarations: [PaymentsMainComponent],
+      imports: [SharedUiButtonsModule, PaymentsDataAccessModule]
     }).compileComponents();
   }));
 

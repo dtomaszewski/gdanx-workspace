@@ -5,7 +5,8 @@ import { RentFeatureShellModule } from '@gdanx/rent/feature-shell';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent, RentFeatureShellModule]
+      declarations: [AppComponent],
+      imports: [RentFeatureShellModule]
     }).compileComponents();
   }));
 
