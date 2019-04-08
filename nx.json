@@ -45,7 +45,7 @@
       "tags": ["scope:payments", "type:data-access"]
     },
     "shared-ui-buttons": {
-      "tags": ["scope:shared", "type:presentational"]
+      "tags": ["scope:shared", "type:ui"]
     },
     "rent-feature-map": {
       "tags": ["scope:rent", "type:feature"]

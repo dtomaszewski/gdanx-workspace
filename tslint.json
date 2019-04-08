@@ -69,8 +69,8 @@
             "onlyDependOnLibsWithTags": ["scope:shared"]
           },
           {
-            "sourceTag": "type:presentational",
-            "onlyDependOnLibsWithTags": ["type:presentational"]
+            "sourceTag": "type:ui",
+            "onlyDependOnLibsWithTags": ["type:ui"]
           }
         ]
       }
